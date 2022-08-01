@@ -14,7 +14,7 @@ body {
 /* Header styles */
 header {
     background-color: #161616;
-    height: 646px;
+    /* height: 646px; */
     margin-top: 50px;
     border-radius: 30px;
     margin-bottom: 130px;
@@ -23,6 +23,7 @@ header {
 .live-watching {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    padding-bottom: 80px;
 }
 
 .show-live {
@@ -57,30 +58,29 @@ header {
 .fa-greater-than {
     font-size: 16px;
     margin-left: 10px;
+    position: relative;
 }
 
-.player-image {
+.show-live button:hover {
+    background-color: purple;
+    transition: 1s ease;
+}
+
+.show-live button:hover .fa-greater-than {
+    transform: translateX(20px);
+    transition: 1s ease-in-out;
+}
+
+.live-watching .player-image {
     width: 50%;
     margin: auto;
     margin-top: 33px;
-    display: flex;
-}
-
-.player-image .image {
-    height: 613px;
-    width: 581px;
-}
-
-.football-animation {
-    height: 150px;
-    width: 150px;
     position: relative;
-    right: 525px;
+    top: 25%;
 }
 
-.football-animation:hover {
-    transform: translate(100px);
-    transform: rotate(360deg);
+.player-image img {
+    width: 100%;
 }
 
 /* Header Styles */
@@ -267,3 +267,130 @@ footer {
 }
 
 /* Footer Styles */
+
+/* Responsive For mobile view */
+@media only screen and (max-width:575px) {
+    .container {
+        width: 100%;
+    }
+
+    .live-watching {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .live-watching .player-image {
+        position: relative;
+        margin-bottom: 60px;
+    }
+
+    .tablet-menu {
+        display: flex;
+    }
+
+    .menu button {
+        margin-bottom: 20px;
+    }
+
+    .matches {
+        display: none;
+    }
+
+    .transfer-mathches {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .transfer.empty-grid {
+        display: none;
+    }
+
+    .transfer img {
+        width: 100%;
+    }
+
+    .useful-links {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 10px;
+    }
+}
+
+/* Responsive for mobile view */
+
+/* Responsive for Tablet view */
+@media only screen and (min-width:576px) and (max-width:768px) {
+    .container {
+        width: 98%;
+    }
+
+    .live-watching {
+        width: 100%;
+        padding-bottom: 20px;
+    }
+
+    .show-live {
+        margin-top: 10px;
+        margin-left: 50px;
+        margin-bottom: 10px;
+    }
+
+    .show-live h1 {
+        font-size: 30px;
+    }
+
+    .show-live p {
+        font-size: 12px;
+    }
+
+    .show-live button {
+        padding: 10px 18px;
+        font-size: 15px;
+        border: none;
+    }
+
+    .player-image img {
+        height: 300px;
+        width: 100%;
+        position: relative;
+        bottom: 80px;
+    }
+
+    .tablet-menu {
+        display: grid;
+    }
+
+    .menu button {
+        font-size: 15px;
+        margin-right: 10px;
+    }
+
+    .matches {
+        display: none;
+    }
+
+    .transfer-mathches {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+
+    .transfer .player-running-image img {
+        width: 100%;
+    }
+
+    .transfer.empty-grid {
+        display: none;
+    }
+
+    .transfer.invisible {
+        display: none;
+    }
+
+    .for-tablet {
+        display: block;
+    }
+}
